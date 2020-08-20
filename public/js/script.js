@@ -16,7 +16,7 @@ var msg2= document.querySelector('#m2')
 weatherForm.addEventListener('submit', (e) => {
     e.preventDefault()
     const searchloc= search.value
-    fetch('http://localhost:3000/weather?address='+ searchloc).then( (response) => {
+    fetch('/weather?address='+ searchloc).then( (response) => {
     response.json().then( (data) => {
         if(data.error) {
             msg1.textContent= data.error

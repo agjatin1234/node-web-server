@@ -8,6 +8,8 @@ const filepath= path.join(__dirname,'../public')
 const viewpath= path.join(__dirname,'../templates/views')
 const partialpath= path.join(__dirname,'../templates/partials')
 
+const port= process.env.PORT || 3000
+
 app.use(express.static(filepath))
 
 app.set('view engine','hbs')
@@ -100,6 +102,6 @@ app.get('/*',(req,res) => {
         name: 'AJ'
     })
 })
-app.listen(3000, () => {
-    console.log("Server running at port 3000!");
+app.listen(port, () => {
+    console.log("Server running at port "+port);
 });
