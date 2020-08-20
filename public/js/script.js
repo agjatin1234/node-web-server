@@ -19,11 +19,11 @@ weatherForm.addEventListener('submit', (e) => {
     fetch('/weather?address='+ searchloc).then( (response) => {
     response.json().then( (data) => {
         if(data.error) {
-            msg1.textContent= data.error
+            msg1.textContent= "* "+ data.error
         }
         else{
-            msg1.textContent= data.location
-            msg2.textContent= data.data
+            msg1.textContent= "* Your search result for " +data.location
+            msg2.textContent= "* " +data.data
         }
     })
 })

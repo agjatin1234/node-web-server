@@ -5,7 +5,7 @@ const forecast= (location,callback) => {
     
     request({ url, json: true}, (error, response) => {
     if (error) {
-        callback('Unable to connect to waether services!',undefined);
+        callback('Unable to connect to weather services!',undefined);
     }
     else if (response.body.Message){
         callback("No such Location",undefined);
